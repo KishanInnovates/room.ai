@@ -24,9 +24,11 @@ const Home: React.FC = () => {
           themes. 100% free – remodel your room today.
         </h2>
         <Link
-          href="/"
+          href="/dream"
           className="bg-blue-600 rounded-xl text-white font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-blue-500 transition"
-        ></Link>
+        >
+          Generate your dream room
+        </Link>
         <div className="flex justify-between items-center w-full flex-col sm:mt-10 mt-6">
           <div className="flex flex-col space-y-10 mt-4 mb-16">
             <div className="flex sm:space-x-8 sm:flex-row flex-col">
@@ -54,7 +56,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
