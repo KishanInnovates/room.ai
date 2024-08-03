@@ -14,7 +14,7 @@ const Home: React.FC = () => {
         <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-normal text-gray-300 sm:text-7xl">
           Generating dream rooms{" "}
           <span className="relative whitespace-nowrap text-blue-600">
-            {/* <SquigglyLines /> */}
+            
             <span className="relative">using AI</span>
           </span>{" "}
           for everyone.
