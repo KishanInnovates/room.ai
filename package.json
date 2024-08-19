@@ -12,9 +12,11 @@
     "@bytescale/upload-widget-react": "^4.19.0",
     "@headlessui/react": "^2.1.2",
     "@heroicons/react": "^2.1.5",
+    "framer-motion": "^11.3.28",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-use-measure": "^2.1.1"
   },
   "devDependencies": {
     "@types/node": "^20",

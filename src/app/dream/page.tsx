@@ -5,6 +5,7 @@ import { UrlBuilder } from "@bytescale/sdk";
 import { UploadWidgetConfig } from "@bytescale/upload-widget";
 import { roomType, themeType } from "@/utils/dropdowntypes";
 import Header from "@/components/Header";
+import ResizablePanel from "@/components/ResizablePanel";
 
 
 const options: UploadWidgetConfig = {
@@ -94,6 +95,9 @@ export default function DreamPage() {
         <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-100 sm:text-6xl mb-5">
           Generate your <span className="text-blue-600">dream</span> room
         </h1>
+        <ResizablePanel children={undefined}>
+          
+        </ResizablePanel>
       </main>
     </div>
   );
