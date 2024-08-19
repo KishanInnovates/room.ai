@@ -4,6 +4,7 @@ import { UploadDropzone } from "@bytescale/upload-widget-react";
 import { UrlBuilder } from "@bytescale/sdk";
 import { UploadWidgetConfig } from "@bytescale/upload-widget";
 import { roomType, themeType } from "@/utils/dropdowntypes";
+import Header from "@/components/Header";
 
 
 const options: UploadWidgetConfig = {
@@ -32,10 +33,14 @@ const options: UploadWidgetConfig = {
 
 export default function DreamPage() {
   const [originalPhoto, setOriginalPhoto] = useState<String | null>(null);
+  const [restoredImage, setRestoredImage] = useState<String | null>(null);
+  const [restoredLoaded, setRestoredLoaded] = useState<boolean>(false);
+  const [sideBySide, setSideBySide] = useState<boolean>(false);
   const [photoName, setPhotoName] = useState<String | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [theme, setTheme] = useState<themeType>("Modern");
   const [room, setRoom] = useState<roomType>("Living Room");
+  const [error, setError] = useState<string | null>(null);
 
 
   const uploadDropZone = () => {
@@ -72,6 +77,24 @@ export default function DreamPage() {
       },
       body: JSON.stringify({ imageUrl: fileUrl, theme, room }),
     });
-    //todo: to add function
+    let newPhoto = await res.json();
+    if (res.status != 200) {
+      setError(newPhoto);
+    } else {
+      setRestoredImage(newPhoto[1]);
+    }
+    setTimeout(() => {
+      setLoading(false);
+    }, 1300);
   }
+  return (
+    <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
+      <Header />
+      <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8">
+        <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-100 sm:text-6xl mb-5">
+          Generate your <span className="text-blue-600">dream</span> room
+        </h1>
+      </main>
+    </div>
+  );
 }
